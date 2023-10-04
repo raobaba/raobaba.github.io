@@ -43,6 +43,7 @@ function Navbar() {
       padding="1rem"
       borderBottom="1px"
       borderColor="gray.200"
+      box-shadow="rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px"
       className={isDarkMode ? styles.darkMode : ""}
     >
       <Box>
@@ -62,8 +63,8 @@ function Navbar() {
                 isMenuOpen ? (
                   <CloseIcon
                     style={{
-                      fontSize:"30px",
-                      marginTop:"-6px",
+                      fontSize: "30px",
+                      marginTop: "-6px",
                       backgroundColor: isDarkMode ? "rgb(31, 24, 24)" : "white",
                       color: isDarkMode ? "white" : "rgb(31, 24, 24)",
                     }}
@@ -71,8 +72,8 @@ function Navbar() {
                 ) : (
                   <HamburgerIcon
                     style={{
-                      fontSize:"55px",
-                      marginTop:"-6px",
+                      fontSize: "55px",
+                      marginTop: "-6px",
                       backgroundColor: isDarkMode ? "rgb(31, 24, 24)" : "white",
                       color: isDarkMode ? "white" : "rgb(31, 24, 24)",
                     }}
@@ -125,7 +126,7 @@ function Navbar() {
           <IconButton
             aria-label="Toggle Light Mode"
             fontSize="3xl"
-            icon={<MoonIcon />}
+            icon={<SunIcon />}
             variant="ghost"
             style={{
               backgroundColor: "#007bff",
@@ -140,11 +141,11 @@ function Navbar() {
           <IconButton
             aria-label="Toggle Dark Mode"
             fontSize="3xl"
-            icon={<SunIcon />}
+            icon={<MoonIcon />}
             variant="ghost"
             style={{
               margin: "10px 10px",
-              fontSize:"35px"
+              fontSize: "40px",
             }}
             onClick={toggleDarkMode}
           />
@@ -161,6 +162,7 @@ function Navbar() {
           top="105px"
           borderColor="gray.200"
           right="1px"
+          box-shadow="rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px"
           style={{
             backgroundColor: isDarkMode ? "rgb(31, 24, 24)" : "white",
             color: isDarkMode ? "white" : "rgb(31, 24, 24)",
@@ -171,7 +173,13 @@ function Navbar() {
           zIndex="999"
         >
           {sections.map((section) => (
-            <Box as="li" key={section.id} fontSize="2xl" marginTop="10px" fontWeight="bold">
+            <Box
+              as="li"
+              key={section.id}
+              fontSize="2xl"
+              marginTop="10px"
+              fontWeight="bold"
+            >
               <a
                 href={`#${section.id}`}
                 onClick={() => {
@@ -188,7 +196,7 @@ function Navbar() {
           ))}
           <button
             className={styles.button}
-            style={{marginTop:'12px'}}
+            style={{ marginTop: "12px" }}
             onClick={() => setIsMenuOpen(false)} // Close the menu on button click
           >
             RESUME
