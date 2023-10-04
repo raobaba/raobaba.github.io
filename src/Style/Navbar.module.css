@@ -1,0 +1,61 @@
+.active {
+  position: relative;
+}
+.click {
+  position: relative;
+  color: green;
+}
+.name {
+  font-weight: bold;
+  background: linear-gradient(to right, #007bff, #9c1348);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-right: 20px;
+}
+.button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  font-size: 23px;
+  background: linear-gradient(to right, #007bff, #525ac0);
+  padding: 4px 30px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  cursor: pointer;
+}
+.darkMode {
+  background-color: rgb(31, 24, 24);
+  color: white;
+}
+
+.active:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: green;
+  bottom: -3px;
+  left: 0;
+  animation: growLine 0.5s linear forwards;
+}
+.click::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+
+  background-color: white;
+  bottom: -5px;
+  left: 0;
+  animation: growLine 0.5s linear forwards;
+}
+
+@keyframes growLine {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
