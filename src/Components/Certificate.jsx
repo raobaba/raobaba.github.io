@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Work() {
+function Certificate() {
   return (
     <div>
-      <h1>Work</h1>
+      <h1>Certificate</h1>
       <div
         style={{
           width: "90%",
@@ -16,4 +16,4 @@ function Work() {
   )
 }
 
-export default Work
+export default Certificate

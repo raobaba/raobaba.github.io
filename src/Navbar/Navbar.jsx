@@ -7,6 +7,7 @@ import {
   IconButton,
   useMediaQuery,
 } from "@chakra-ui/react";
+import { Link } from 'react-router-dom';
 import { SunIcon, MoonIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import styles from "../Style/Navbar.module.css";
 
@@ -42,9 +43,15 @@ function Navbar() {
       justify="space-between"
       padding="1rem"
       borderBottom="1px"
+      left = '0'
+      right = '0'
+      z-index = '1000'
+      position= 'fixed'
       borderColor="gray.200"
       box-shadow="rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px"
-      className={isDarkMode ? styles.darkMode : ""}
+      className={isDarkMode ? styles.darkMode : ''}
+      style={isDarkMode ? {} : { backgroundColor: '#FFFFFF' }}
+
     >
       <Box>
         <Text className={styles.name} fontSize="5xl" fontWeight="bold">
@@ -102,8 +109,8 @@ function Navbar() {
                 fontSize="2xl"
                 fontWeight="bold"
               >
-                <a
-                  href={`#${section.id}`}
+                <Link
+                  to={`${section.id}`}
                   onClick={() => handleSectionClick(section.id)}
                   onMouseEnter={() => setActiveSection(section.id)}
                   className={`${
@@ -114,7 +121,7 @@ function Navbar() {
                   } ${clickedSection === section.id ? styles.click : ""}`}
                 >
                   {section.name}
-                </a>
+                </Link>
               </Box>
             ))}
           </Flex>
