@@ -1,8 +1,8 @@
-import React from 'react'
-
-function About() {
+import React from "react";
+import styles from "../Style/About.module.css";
+function About({ isDarkMode }) {
   return (
-    <div>
+    <div id="about" className={isDarkMode ? styles.darkMode : ""}>
       <h1>About</h1>
       <div
         style={{
@@ -13,7 +13,7 @@ function About() {
         }}
       ></div>
     </div>
-  )
+  );
 }
 
-export default About
+export default About;

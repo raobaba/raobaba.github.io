@@ -1,8 +1,12 @@
 import React from "react";
-
-function Home() {
+import styles from '../Style/Home.module.css';
+function Home({isDarkMode }) {
   return (
-    <div style={{paddingTop:'100px'}}>
+    <div 
+    id="home" 
+    style={{paddingTop:'100px',}} 
+    className={isDarkMode ? styles.darkMode : ''}
+    >
       <h1>Home</h1>
       <div
         style={{

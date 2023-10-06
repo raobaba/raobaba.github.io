@@ -1,8 +1,8 @@
-import React from 'react'
-
-function Work() {
+import React from "react";
+import styles from "../Style/Work.module.css";
+function Work({ isDarkMode }) {
   return (
-    <div>
+    <div id="work" className={isDarkMode ? styles.darkMode : ""}>
       <h1>Work</h1>
       <div
         style={{
@@ -13,7 +13,7 @@ function Work() {
         }}
       ></div>
     </div>
-  )
+  );
 }
 
-export default Work
+export default Work;

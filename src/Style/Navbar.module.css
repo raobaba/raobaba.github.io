@@ -3,7 +3,9 @@
 }
 .click {
   position: relative;
-  color: green;
+  color: rgb(175, 14, 14);
+
+  animation: growLine 0.5s linear forwards;
 }
 .name {
   font-weight: bold;
@@ -13,7 +15,7 @@
   margin-right: 20px;
 }
 .button {
-  background-color: #007bff;
+  background-color: #b30c7b;
   color: #fff;
   border: none;
   font-size: 23px;
@@ -35,7 +37,7 @@
   position: absolute;
   width: 100%;
   height: 3px;
-  background-color: green;
+  background-color: rgb(189, 25, 126);
   bottom: -3px;
   left: 0;
   animation: growLine 0.5s linear forwards;
@@ -44,7 +46,6 @@
   content: "";
   position: absolute;
   width: 100%;
-
   background-color: white;
   bottom: -5px;
   left: 0;

@@ -1,8 +1,8 @@
-import React from 'react'
-
-function Contact() {
+import React from "react";
+import styles from "../Style/Contact.module.css";
+function Contact({ isDarkMode }) {
   return (
-    <div>
+    <div id="contact" className={isDarkMode ? styles.darkMode : ""}>
       <h1>Contact</h1>
       <div
         style={{
@@ -13,7 +13,7 @@ function Contact() {
         }}
       ></div>
     </div>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

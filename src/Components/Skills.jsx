@@ -1,8 +1,8 @@
-import React from 'react'
-
-function Skills() {
+import React from "react";
+import styles from "../Style/Skill.module.css";
+function Skills({ isDarkMode }) {
   return (
-    <div>
+    <div id="skills" className={isDarkMode ? styles.darkMode : ""}>
       <h1>Skills</h1>
       <div
         style={{
@@ -13,7 +13,7 @@ function Skills() {
         }}
       ></div>
     </div>
-  )
+  );
 }
 
-export default Skills
+export default Skills;

@@ -7,21 +7,16 @@ import {
   IconButton,
   useMediaQuery,
 } from "@chakra-ui/react";
-import { Link } from 'react-router-dom';
 import { SunIcon, MoonIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import styles from "../Style/Navbar.module.css";
+import { Link as ScrollLink } from 'react-scroll'; 
 
-function Navbar() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+function Navbar({isDarkMode,toggleDarkMode}) {
   const [activeSection, setActiveSection] = useState("home");
   const [clickedSection, setClickedSection] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isXL] = useMediaQuery("(max-width: 1200px)"); // Detect XL screen size
 
-  // Function to toggle dark mode
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
   const handleSectionClick = (sectionId) => {
     setClickedSection(sectionId);
   };
@@ -45,7 +40,7 @@ function Navbar() {
       borderBottom="1px"
       left = '0'
       right = '0'
-      z-index = '1000'
+      zIndex = '1000'
       position= 'fixed'
       borderColor="gray.200"
       box-shadow="rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px"
@@ -108,9 +103,14 @@ function Navbar() {
                 marginRight="8"
                 fontSize="2xl"
                 fontWeight="bold"
+                cursor='pointer'
               >
-                <Link
+                <ScrollLink
                   to={`${section.id}`}
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
                   onClick={() => handleSectionClick(section.id)}
                   onMouseEnter={() => setActiveSection(section.id)}
                   className={`${
@@ -121,7 +121,7 @@ function Navbar() {
                   } ${clickedSection === section.id ? styles.click : ""}`}
                 >
                   {section.name}
-                </Link>
+                </ScrollLink>
               </Box>
             ))}
           </Flex>

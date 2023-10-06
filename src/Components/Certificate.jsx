@@ -1,8 +1,8 @@
-import React from 'react'
-
-function Certificate() {
+import React from "react";
+import styles from "../Style/Certificate.module.css";
+function Certificate({ isDarkMode }) {
   return (
-    <div>
+    <div id="certificate" className={isDarkMode ? styles.darkMode : ""}>
       <h1>Certificate</h1>
       <div
         style={{
@@ -13,7 +13,7 @@ function Certificate() {
         }}
       ></div>
     </div>
-  )
+  );
 }
 
-export default Certificate
+export default Certificate;
