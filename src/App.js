@@ -15,8 +15,25 @@ function App() {
     setIsDarkMode(!isDarkMode);
   };
 
+  const disableRightClick = (e) => {
+    e.preventDefault();
+  }; 
+  
+  document.addEventListener("contextmenu", disableRightClick);
+
+  const disableCopyAndPaste = (e) => {
+    e.preventDefault();
+  };
+
+  document.addEventListener("copy", disableCopyAndPaste);
+  document.addEventListener("cut", disableCopyAndPaste);
+  document.addEventListener("paste", disableCopyAndPaste);
+
   return (
-    <div className={`App ${isDarkMode ? 'dark' : ''}`}>
+    <div
+      className={`App ${isDarkMode ? "dark" : ""}`}
+      style={{ userSelect: "none" }}
+    >
       <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       <div>
         <Home isDarkMode={isDarkMode} />
