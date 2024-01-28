@@ -8,7 +8,7 @@ import {
   useMediaQuery,
 } from "@chakra-ui/react";
 import { SunIcon, MoonIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import styles from "../Style/Navbar.module.css";
+import styles from "../styles/Navbar.module.css";
 import { Link as ScrollLink } from 'react-scroll'; 
 
 function Navbar({isDarkMode,toggleDarkMode}) {

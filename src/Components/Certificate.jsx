@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../Style/Certificate.module.css";
+import styles from "../styles/Certificate.module.css";
 function Certificate({ isDarkMode }) {
   return (
     <div id="certificate" className={isDarkMode ? styles.darkMode : ""}>

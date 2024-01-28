@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../Style/Skill.module.css";
+import styles from "../styles/Skill.module.css";
 function Skills({ isDarkMode }) {
   return (
     <div id="skills" className={isDarkMode ? styles.darkMode : ""}>

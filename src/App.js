@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import "./App.css";
+
 import About from "./Components/About";
 import Certificate from "./Components/Certificate";
 import Contact from "./Components/Contact";
 import Home from "./Components/Home";
 import Skills from "./Components/Skills";
 import Work from "./Components/Work";
-import Navbar from "./Navbar/Navbar";
+import Navbar from "./navbar/Navbar";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);

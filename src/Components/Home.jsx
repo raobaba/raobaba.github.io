@@ -1,5 +1,5 @@
 import React from "react";
-import styles from '../Style/Home.module.css';
+import styles from '../styles/Home.module.css';
 function Home({isDarkMode }) {
   return (
     <div 

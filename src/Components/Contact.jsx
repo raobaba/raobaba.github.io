@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../Style/Contact.module.css";
+import styles from "../styles/Contact.module.css";
 function Contact({ isDarkMode }) {
   return (
     <div id="contact" className={isDarkMode ? styles.darkMode : ""}>
