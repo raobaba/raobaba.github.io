@@ -9,9 +9,9 @@ import {
 } from "@chakra-ui/react";
 import { SunIcon, MoonIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import styles from "../styles/Navbar.module.css";
-import { Link as ScrollLink } from 'react-scroll'; 
+import { Link as ScrollLink } from "react-scroll";
 
-function Navbar({isDarkMode,toggleDarkMode}) {
+function Navbar({ isDarkMode, toggleDarkMode }) {
   const [activeSection, setActiveSection] = useState("home");
   const [clickedSection, setClickedSection] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,7 +25,7 @@ function Navbar({isDarkMode,toggleDarkMode}) {
   const sections = [
     { id: "home", name: "HOME" },
     { id: "about", name: "ABOUT" },
-    { id: "work", name: "WORK" },
+    { id: "experience", name: "EXPERIENCE" },
     { id: "project", name: "PROJECT" },
     { id: "skills", name: "SKILLS" },
     { id: "certificate", name: "CERTIFICATES" },
@@ -39,15 +39,14 @@ function Navbar({isDarkMode,toggleDarkMode}) {
       justify="space-between"
       padding="1rem"
       borderBottom="1px"
-      left = '0'
-      right = '0'
-      zIndex = '1000'
-      position= 'fixed'
+      left="0"
+      right="0"
+      zIndex="1000"
+      position="fixed"
       borderColor="gray.200"
       box-shadow="rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px"
-      className={isDarkMode ? styles.darkMode : ''}
-      style={isDarkMode ? {} : { backgroundColor: '#FFFFFF' }}
-
+      className={isDarkMode ? styles.darkMode : ""}
+      style={isDarkMode ? {} : { backgroundColor: "#FFFFFF" }}
     >
       <Box>
         <Text className={styles.name} fontSize="4xl" fontWeight="bold">
@@ -102,9 +101,9 @@ function Navbar({isDarkMode,toggleDarkMode}) {
                 as="li"
                 key={section.id}
                 marginRight="5"
-                fontSize="xl"
-                fontWeight="bold"
-                cursor='pointer'
+                fontSize="20px"
+                fontWeight="normal"
+                cursor="pointer"
               >
                 <ScrollLink
                   to={`${section.id}`}
@@ -141,7 +140,7 @@ function Navbar({isDarkMode,toggleDarkMode}) {
               color: "#fff",
               border: "none",
               background: "linear-gradient(to right, #007bff, #525ac0)",
-              margin: "10px 10px",
+              margin: "8px 8px",
             }}
             onClick={toggleDarkMode}
           />
@@ -152,8 +151,8 @@ function Navbar({isDarkMode,toggleDarkMode}) {
             icon={<MoonIcon />}
             variant="ghost"
             style={{
-              margin: "10px 10px",
-              fontSize: "40px",
+              margin: "8px 8px",
+              fontSize: "35px",
             }}
             onClick={toggleDarkMode}
           />
@@ -184,9 +183,10 @@ function Navbar({isDarkMode,toggleDarkMode}) {
             <Box
               as="li"
               key={section.id}
-              fontSize="2xl"
-              marginTop="10px"
-              fontWeight="bold"
+              marginRight="5"
+              fontSize="20px"
+              fontWeight="normal"
+              cursor="pointer"
             >
               <a
                 href={`#${section.id}`}

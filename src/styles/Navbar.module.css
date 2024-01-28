@@ -4,16 +4,13 @@
 .click {
   position: relative;
   color: rgb(175, 14, 14);
-
   animation: growLine 0.5s linear forwards;
 }
 .name {
-  font-weight: bold;
   background: linear-gradient(to right, #007bff, #9c1348);
   -webkit-background-clip: text;
   color: transparent;
   margin-right: 20px;
-  
 }
 .button {
   background-color: #b30c7b;
@@ -21,7 +18,7 @@
   border: none;
   font-size: 20px;
   background: linear-gradient(to right, #007bff, #525ac0);
-  padding: 4px 30px;
+  padding: 4px 20px;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   border-bottom-left-radius: 40px;

@@ -5,7 +5,7 @@ import Certificate from "./Components/Certificate";
 import Contact from "./Components/Contact";
 import Home from "./Components/Home";
 import Skills from "./Components/Skills";
-import Work from "./Components/Work";
+import Experience from "./Components/Experience";
 import Navbar from "./Navbar/Navbar";
 import Project from "./Components/Project";
 
@@ -39,7 +39,7 @@ function App() {
       <div>
         <Home isDarkMode={isDarkMode} />
         <About isDarkMode={isDarkMode} />
-        <Work isDarkMode={isDarkMode} />
+        <Experience isDarkMode={isDarkMode} />
         <Project isDarkMode={isDarkMode} />
         <Skills isDarkMode={isDarkMode} />
         <Certificate isDarkMode={isDarkMode} />
