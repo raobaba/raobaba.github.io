@@ -31,6 +31,7 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
     { id: "certificate", name: "CERTIFICATES" },
     { id: "contact", name: "CONTACT" },
   ];
+  
 
   return (
     <Flex
