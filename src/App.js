@@ -6,7 +6,8 @@ import Contact from "./Components/Contact";
 import Home from "./Components/Home";
 import Skills from "./Components/Skills";
 import Work from "./Components/Work";
-import Navbar from "./navbar/Navbar";
+import Navbar from "./Navbar/Navbar";
+import Project from "./Components/Project";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -15,19 +16,19 @@ function App() {
     setIsDarkMode(!isDarkMode);
   };
 
-  const disableRightClick = (e) => {
-    e.preventDefault();
-  }; 
+  // const disableRightClick = (e) => {
+  //   e.preventDefault();
+  // }; 
   
-  document.addEventListener("contextmenu", disableRightClick);
+  // document.addEventListener("contextmenu", disableRightClick);
 
-  const disableCopyAndPaste = (e) => {
-    e.preventDefault();
-  };
+  // const disableCopyAndPaste = (e) => {
+  //   e.preventDefault();
+  // };
 
-  document.addEventListener("copy", disableCopyAndPaste);
-  document.addEventListener("cut", disableCopyAndPaste);
-  document.addEventListener("paste", disableCopyAndPaste);
+  // document.addEventListener("copy", disableCopyAndPaste);
+  // document.addEventListener("cut", disableCopyAndPaste);
+  // document.addEventListener("paste", disableCopyAndPaste);
 
   return (
     <div
@@ -39,6 +40,7 @@ function App() {
         <Home isDarkMode={isDarkMode} />
         <About isDarkMode={isDarkMode} />
         <Work isDarkMode={isDarkMode} />
+        <Project isDarkMode={isDarkMode} />
         <Skills isDarkMode={isDarkMode} />
         <Certificate isDarkMode={isDarkMode} />
         <Contact isDarkMode={isDarkMode} />

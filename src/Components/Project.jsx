@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/Skill.module.css";
 import common from "../styles/Common.module.css";
-function Skills({ isDarkMode }) {
+function Project({ isDarkMode }) {
   return (
     <>
     
@@ -13,4 +13,4 @@ function Skills({ isDarkMode }) {
   );
 }
 
-export default Skills;
+export default Project;

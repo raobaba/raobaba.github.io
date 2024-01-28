@@ -26,6 +26,7 @@ function Navbar({isDarkMode,toggleDarkMode}) {
     { id: "home", name: "HOME" },
     { id: "about", name: "ABOUT" },
     { id: "work", name: "WORK" },
+    { id: "project", name: "PROJECT" },
     { id: "skills", name: "SKILLS" },
     { id: "certificate", name: "CERTIFICATES" },
     { id: "contact", name: "CONTACT" },
@@ -49,7 +50,7 @@ function Navbar({isDarkMode,toggleDarkMode}) {
 
     >
       <Box>
-        <Text className={styles.name} fontSize="5xl" fontWeight="bold">
+        <Text className={styles.name} fontSize="4xl" fontWeight="bold">
           RAJAN
         </Text>
       </Box>
@@ -60,7 +61,7 @@ function Navbar({isDarkMode,toggleDarkMode}) {
           <Flex>
             <IconButton
               aria-label="Toggle Menu"
-              fontSize="3xl"
+              fontSize="2xl"
               icon={
                 isMenuOpen ? (
                   <CloseIcon
@@ -100,8 +101,8 @@ function Navbar({isDarkMode,toggleDarkMode}) {
               <Box
                 as="li"
                 key={section.id}
-                marginRight="8"
-                fontSize="2xl"
+                marginRight="5"
+                fontSize="xl"
                 fontWeight="bold"
                 cursor='pointer'
               >
@@ -132,7 +133,7 @@ function Navbar({isDarkMode,toggleDarkMode}) {
         {isDarkMode ? (
           <IconButton
             aria-label="Toggle Light Mode"
-            fontSize="3xl"
+            fontSize="2xl"
             icon={<SunIcon />}
             variant="ghost"
             style={{
@@ -147,7 +148,7 @@ function Navbar({isDarkMode,toggleDarkMode}) {
         ) : (
           <IconButton
             aria-label="Toggle Dark Mode"
-            fontSize="3xl"
+            fontSize="2xl"
             icon={<MoonIcon />}
             variant="ghost"
             style={{
