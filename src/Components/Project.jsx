@@ -5,8 +5,8 @@ function Project({ isDarkMode }) {
   return (
     <>
     
-      <div id="skills" className={isDarkMode ? styles.darkMode : ""}>
-        <h1>Skills</h1>
+      <div id="project" className={isDarkMode ? styles.darkMode : ""}>
+        <h1>Projects</h1>
         <div className={common.boxes}></div>
       </div>
     </>

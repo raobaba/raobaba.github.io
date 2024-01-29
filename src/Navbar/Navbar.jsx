@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Flex,
@@ -31,7 +31,43 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
     { id: "certificate", name: "CERTIFICATES" },
     { id: "contact", name: "CONTACT" },
   ];
-  
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    const active = sections.find((section) => {
+      const element = document.getElementById(section.id);
+      if (element) {
+        const offsetTop = element.offsetTop;
+        const offsetBottom = offsetTop + element.clientHeight;
+        return scrollY >= offsetTop - 100 && scrollY < offsetBottom - 100;
+      }
+      return false;
+    });
+    if (active) {
+      setActiveSection(active.id);
+      setClickedSection(active.id);
+    }
+  };
+
+  console.log("activeSection", activeSection);
+
+  const handleSetActive = (section) => {
+    setActiveSection(section);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Close the menu when screen size is greater than 1200px
+    if (!isXL && isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  }, [isXL]);
 
   return (
     <Flex
@@ -93,7 +129,6 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
           </Flex>
         </>
       ) : (
-        // Non-XL screen: Show sections and RESUME button
         <>
           <Spacer />
           <Flex as="ul" listStyleType="none">
@@ -106,14 +141,16 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
                 fontWeight="normal"
                 cursor="pointer"
               >
+                {/* ScrollLink component from react-scroll */}
                 <ScrollLink
-                  to={`${section.id}`}
+                  to={section.id}
                   spy={true}
                   smooth={true}
                   offset={-100}
                   duration={500}
                   onClick={() => handleSectionClick(section.id)}
                   onMouseEnter={() => setActiveSection(section.id)}
+                  onSetActive={() => handleSetActive(section.id)}
                   className={`${
                     activeSection === section.id ||
                     clickedSection === section.id
