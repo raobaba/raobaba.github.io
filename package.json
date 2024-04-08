@@ -15,7 +15,8 @@
     "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
-    "react-slider": "^2.0.6"
+    "react-slider": "^2.0.6",
+    "scrollreveal": "^4.0.9"
   },
   "scripts": {
     "start": "react-scripts start",

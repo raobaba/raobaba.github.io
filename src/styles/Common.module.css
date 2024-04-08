@@ -3,6 +3,7 @@
   height: 500px;
   border: 1px solid black;
   margin: auto;
+  transition: width 0.3s ease;
 }
 
 .darkMode {

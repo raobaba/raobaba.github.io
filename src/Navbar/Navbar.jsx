@@ -15,7 +15,7 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
   const [activeSection, setActiveSection] = useState("home");
   const [clickedSection, setClickedSection] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isXL] = useMediaQuery("(max-width: 1200px)"); // Detect XL screen size
+  const [isXL] = useMediaQuery("(max-width: 1200px)"); 
 
   const handleSectionClick = (sectionId) => {
     setClickedSection(sectionId);
@@ -63,7 +63,6 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
   }, []);
 
   useEffect(() => {
-    // Close the menu when screen size is greater than 1200px
     if (!isXL && isMenuOpen) {
       setIsMenuOpen(false);
     }
@@ -111,7 +110,7 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
                 ) : (
                   <HamburgerIcon
                     style={{
-                      fontSize: "55px",
+                      fontSize: "50px",
                       marginTop: "-6px",
                       backgroundColor: isDarkMode ? "rgb(31, 24, 24)" : "white",
                       color: isDarkMode ? "white" : "rgb(31, 24, 24)",
