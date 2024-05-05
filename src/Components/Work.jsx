@@ -1,19 +1,19 @@
 import React, { useEffect } from "react";
-import styles from "../styles/Skill.module.css";
+import styles from "../styles/Work.module.css";
 import common from "../styles/Common.module.css";
 import { applyScrollReveal } from "../config/scrollRevealConfig";
-function Skills() {
+
+function Work() {
   useEffect(() => {
     applyScrollReveal(".scrollview");
   }, []);
+
   return (
-    <>
-      <div id="skills" className="scrollview">
-        <h1>Skills</h1>
-        <div className={common.boxes}></div>
-      </div>
-    </>
+    <div id="Work" className="scrollview">
+      <h1>Work</h1>
+      <div className={common.boxes}></div>
+    </div>
   );
 }
 
-export default Skills;
+export default Work;

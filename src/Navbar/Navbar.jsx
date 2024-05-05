@@ -25,10 +25,8 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
   const sections = [
     { id: "home", name: "HOME" },
     { id: "about", name: "ABOUT" },
-    { id: "experience", name: "EXPERIENCE" },
-    { id: "project", name: "PROJECT" },
+    { id: "Work", name: "WORK" },
     { id: "skills", name: "SKILLS" },
-    { id: "certificate", name: "CERTIFICATES" },
     { id: "contact", name: "CONTACT" },
   ];
 
@@ -80,7 +78,7 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
       zIndex="1000"
       position="fixed"
       borderColor="gray.200"
-      box-shadow="rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px"
+      box-shadow="rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"
       className={isDarkMode ? styles.darkMode : ""}
       style={isDarkMode ? {} : { backgroundColor: "#FFFFFF" }}
     >
@@ -201,12 +199,15 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
           as="ul"
           listStyleType="none"
           flexDirection="column"
-          alignItems="flex-end"
+          alignItems="flex-start"
           position="absolute"
-          top="105px"
-          borderColor="gray.200"
+          borderTop="none"
+          borderLeft="1px solid black"
+          borderBottom="1px solid black"
+          top="95px"
+          borderColor="gray"
           right="1px"
-          box-shadow="rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px"
+          box-shadow="rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"
           style={{
             backgroundColor: isDarkMode ? "rgb(31, 24, 24)" : "white",
             color: isDarkMode ? "white" : "rgb(31, 24, 24)",

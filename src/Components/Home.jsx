@@ -3,19 +3,14 @@ import styles from "../styles/Home.module.css";
 import common from "../styles/Common.module.css";
 import { applyScrollReveal } from "../config/scrollRevealConfig";
 
-function Home({ isDarkMode }) {
+function Home() {
   useEffect(() => {
-    applyScrollReveal('.scrollview');
+    applyScrollReveal(".scrollview");
   }, []);
 
   return (
     <>
-      <div
-        id="home"
-        style={{ paddingTop: "100px" }}
-        className={`${isDarkMode ? styles.darkMode : ""} scrollview`}
-      >
-        <h1>Home</h1>
+      <div id="home" style={{ paddingTop: "100px" }} className="scrollview">
         <div className={common.boxes}></div>
       </div>
     </>
