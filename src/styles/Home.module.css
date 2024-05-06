@@ -1,5 +1,89 @@
-.darkMode {
-    background-color: rgb(31, 24, 24);
-    color: white;
+
+.boxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#home {
+  padding-top: 100px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.aboutText p{
+  font-size: 30px;
+}
+
+
+.aboutContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.aboutText {
+  max-width: 400px; 
+}
+
+.profileImage {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+.imageWithCircle {
+  position: relative;
+  display: inline-block;
+}
+
+.imageWithCircle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: red;
+  z-index: -1;
+}
+
+.resumeButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.resumeButton:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .aboutContainer {
+    flex-direction: column;
+    text-align: center;
   }
-  
+
+  .aboutText {
+    margin-bottom: 20px;
+  }
+
+ 
+  .imageWithCircle::before {
+    width: 100px;
+    height: 100px;
+  }
+}
