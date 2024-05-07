@@ -25,6 +25,7 @@
   border-bottom-right-radius: 40px;
   cursor: pointer;
 }
+
 .darkMode {
   background-color: rgb(31, 24, 24);
   color: white;
