@@ -10,12 +10,13 @@ import {
 import { SunIcon, MoonIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import styles from "../styles/Navbar.module.css";
 import { Link as ScrollLink } from "react-scroll";
+import handleClick from "../utils/Contant";
 
 function Navbar({ isDarkMode, toggleDarkMode }) {
   const [activeSection, setActiveSection] = useState("home");
   const [clickedSection, setClickedSection] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isXL] = useMediaQuery("(max-width: 1200px)"); 
+  const [isXL] = useMediaQuery("(max-width: 1200px)");
 
   const handleSectionClick = (sectionId) => {
     setClickedSection(sectionId);
@@ -160,7 +161,9 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
               </Box>
             ))}
           </Flex>
-          <button className={styles.button}>RESUME</button>
+          <button onClick={handleClick} className={styles.button}>
+            RESUME
+          </button>
         </>
       )}
       <Flex align="center">
@@ -240,13 +243,17 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
               </a>
             </Box>
           ))}
-          <button
+          <a
+            download="Rajan-Kumar-Resume"
             className={styles.button}
             style={{ marginTop: "12px" }}
-            onClick={() => setIsMenuOpen(false)} // Close the menu on button click
+            onClick={(event) => {
+              setIsMenuOpen(false);
+              handleClick(event);
+            }}
           >
             RESUME
-          </button>
+          </a>
         </Flex>
       )}
     </Flex>

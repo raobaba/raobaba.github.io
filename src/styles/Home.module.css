@@ -1,8 +1,8 @@
-
-.boxes {
+.aboutContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  width: 90%;
   height: 100%;
 }
 
@@ -11,13 +11,14 @@
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 35px;
+  font-weight: 700;
 }
 
-.aboutText p{
-  font-size: 30px;
+.aboutText p {
+  font-size: 60px;
+  font-weight: 800;
 }
-
 
 .aboutContainer {
   display: flex;
@@ -29,7 +30,8 @@ h2 {
 }
 
 .aboutText {
-  max-width: 400px; 
+  max-width: 400px;
+  line-height: 50px;
 }
 
 .profileImage {
@@ -42,27 +44,33 @@ h2 {
   display: inline-block;
 }
 
+.imageWithCircle img {
+  width: 250px;
+  border-radius: 20px;
+}
+
 .imageWithCircle::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 150px;
-  height: 150px;
+  width: 230px;
+  height: 230px;
   border-radius: 50%;
   background-color: red;
   z-index: -1;
 }
 
+
 .resumeButton {
   background-color: #4caf50;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 1px 20px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 20px;
   transition: background-color 0.3s;
 }
 
@@ -71,7 +79,22 @@ h2 {
 }
 
 /* Responsive Styles */
+@media (max-width: 1200px) {
+  .aboutText p {
+    font-size: 40px;
+  }
+
+  .imageWithCircle::before {
+    width: 200px;
+    height: 200px;
+  }
+}
+
 @media (max-width: 768px) {
+  #home {
+    padding-top: 50px;
+  }
+
   .aboutContainer {
     flex-direction: column;
     text-align: center;
@@ -81,9 +104,25 @@ h2 {
     margin-bottom: 20px;
   }
 
- 
   .imageWithCircle::before {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .imageWithCircle img {
+    width: 200px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .aboutText p {
+    font-size: 30px;
+  }
+
+  .resumeButton {
+    padding: 8px 16px;
+    font-size: 16px;
   }
 }

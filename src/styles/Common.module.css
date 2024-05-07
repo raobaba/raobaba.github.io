@@ -1,8 +1,10 @@
 .boxes {
   width: 90%;
-  height: 500px;
-  border: 1px solid black;
+  min-height: 500px;
+  max-height: auto; 
   margin: auto;
+  padding: 3%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
   transition: width 0.3s ease;
 }
 
@@ -10,4 +12,70 @@
   background-color: rgb(31, 24, 24);
   color: white;
 }
+
+.staticButtons {
+  position: fixed;
+  top: 87%;
+  left: 15px;
+  transform: translateY(-50%);
+}
+
+.staticButton {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin-bottom: 5px;
+  width: 40px; 
+  height: 40px; 
+  font-size: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%; 
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.staticButton:hover {
+  background-color: #4CAF50; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.staticButton:hover svg {
+  width: 30px; 
+  height: 30px; 
+}
+
+.bottomRightButton {
+  position: fixed;
+  bottom: 10px; 
+  right: 10px;
+}
+
+.bottomButton {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px; 
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%; 
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bottomButton:hover {
+  background-color: #4CAF50; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bottomButton:hover svg {
+  width: 30px;
+  height: 30px; 
+}
+
+
 
