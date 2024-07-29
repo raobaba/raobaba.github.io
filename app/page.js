@@ -8,7 +8,7 @@ function Home() {
     <section className="h-full">
       <div className="container mx-auto h-full">
         <div className="flex flex-col md:flex-row items-center justify-between md:pt-8 md:pb-24 ">
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left order-2 md:order-none">
             <span className="text-xl">Software Developer</span>
             <h3 className="h1">
               Hello I'm <br /> <span className="text-accent">Rajan Kumar</span>
@@ -34,7 +34,9 @@ function Home() {
               </div>
             </div>
           </div>
-          <Photo />
+          <div className="order-1 md:order-none mb-8 md:mb-10 ">
+            <Photo />
+          </div>
         </div>
       </div>
     </section>
