@@ -19,9 +19,9 @@ module.exports = {
         xl:"1200px",
       },
     },
-    fontFamily:{
-     primary:"var(--font-jetbrainsMono",
-    },
+    fontFamily: {  
+      primary: ["var(--font-jetbrainsMono)", "monospace"],  
+    }, 
     extend: {
       colors: {
         primary:'#1c1c22',

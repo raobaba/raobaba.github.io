@@ -1,9 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: "JetBrains Mono", monospace;
+}
+
 @layer base {
   body {
-    @apply bg-primary text-white;
+    @apply bg-primary text-white leading-loose;
+  }
+  .h1 {
+    @apply text-[38px] md:text-[60px] leading-[1.1] font-semibold;
+  }
+  .h2 {
+    @apply text-[28px] md:text-[40px] leading-[1.1] font-semibold;
+  }
+  .h3 {
+    @apply text-[18px] md:text-[20px] leading-[1.1] font-semibold;
   }
 }
