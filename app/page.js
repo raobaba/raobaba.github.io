@@ -3,6 +3,7 @@ import React from "react";
 import { FiDownload } from "react-icons/fi";
 import Social from "@/components/Social";
 import Photo from "@/components/Photo";
+import Stats from "@/components/Stats";
 function Home() {
   return (
     <section className="h-full">
@@ -39,6 +40,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <Stats />
     </section>
   );
 }
