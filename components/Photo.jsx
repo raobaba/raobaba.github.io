@@ -23,6 +23,7 @@ function Photo() {
           <Image
             src="./assets/finished.png"
             priority
+            alt="profile pic"
             quality={100}
             fill
             className="object-contain "
