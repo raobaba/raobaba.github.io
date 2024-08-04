@@ -3,7 +3,9 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+
 import {
   Tooltip,
   TooltipContent,
@@ -17,54 +19,59 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "Frontend",
+    category: "FullStack",
     title: "Project 1",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad nobis hic!",
+      "Flipkart has a dominant position in the apparel segment, bolstered by its acquisition of Myntra, and was described as being 'neck and neck' with Amazon in the sale of electronics and mobile phones",
     stack: [
       { name: "HTML 5" },
       { name: "CSS 3" },
       { name: "JavaScript" },
       { name: "React" },
       { name: "Bootstrap" },
+      { name: "Redux" },
+      { name: "Node.js" },
+      { name: "MongoDB" },
+      { name: "ReactJS" },
+      { name: "ExpressJS" },
+      { name: "Redux-Thunk" },
+      { name: "Tailwind CSS" },
     ],
-    image: "/assets/work/thumb1.png",
-    live: "",
-    github: "",
+    image: "/assets/work/flipkart.png",
+    live: "https://flip-ecom-website.netlify.app/",
+    github: "https://github.com/raobaba/Flipkart_Clone",
   },
   {
     num: "02",
     category: "FullStack",
     title: "Project 1",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad nobis hic!",
+      "SkinStore is an authorized retailer to 100s of premium beauty brands across skin, makeup and hair including SkinCeuticals, Dermalogica, Caudalie, Alternative and many othr product related skin. It's a US based company...",
     stack: [
       { name: "HTML 5" },
       { name: "CSS 3" },
       { name: "JavaScript" },
-      { name: "React" },
       { name: "Bootstrap" },
     ],
-    image: "/assets/work/thumb1.png",
-    live: "",
-    github: "",
+    image: "/assets/work/SkinStore.png",
+    live: "https://skinstore-website.netlify.app/",
+    github: "https://github.com/raobaba/Clone-SkinStore",
   },
   {
     num: "03",
     category: "Frontend",
     title: "Project 1",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad nobis hic!",
+      "Myntra is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, and this is our 2 collaborative project in masai school",
     stack: [
       { name: "HTML 5" },
       { name: "CSS 3" },
       { name: "JavaScript" },
-      { name: "React" },
       { name: "Bootstrap" },
     ],
-    image: "/assets/work/thumb1.png",
-    live: "",
-    github: "",
+    image: "/assets/work/Myntra.png",
+    live: "https://darling-tartufo-bbf819.netlify.app/",
+    github: "https://github.com/raobaba/Myntra-Clone",
   },
 ];
 

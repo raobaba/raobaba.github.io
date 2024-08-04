@@ -1,11 +1,12 @@
 "use client";
-import { FaCss3, FaJs, FaHtml5, FaReact, FaNode } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaNode, FaGit, FaDocker } from 'react-icons/fa';
+import { SiTypescript, SiNextdotjs, SiRedux, SiTailwindcss, SiMongodb, SiMysql, SiFirebase, SiPostman, SiBootstrap, SiSocketdotio, SiStripe, SiNpm } from 'react-icons/si';
+
 
 const about = {
   title: "About Me",
   description:
-    "Lorem ipsum dolor elit. Ducimus ex vel accusantium placeat totam similique voluptatibus!",
+    "I am a passionate Full Stack Developer with over 2 years of experience in building and optimizing web applications. With a strong foundation in both frontend and backend technologies, I strive to create seamless and efficient user experiences. My expertise spans across various programming languages and frameworks, and I am dedicated to continuous learning and exploring new technologies.",
   info: [
     {
       fieldName: "Name",
@@ -13,7 +14,7 @@ const about = {
     },
     {
       fieldName: "Phone",
-      fieldValue: "+917061344366",
+      fieldValue: "+91 7061344366",
     },
     {
       fieldName: "Experience",
@@ -38,48 +39,51 @@ const about = {
   ],
 };
 
+
 const experience = {
   icon: "/assets/resume/badge.svg",
-  title: "My experience",
+  title: "My Experience",
   description:
-    "Lorem ipsum dolor elit. Ducimus ex vel accusantium placeat totam similique voluptatibus!",
+    "With a solid background in Full Stack Development, I have successfully delivered multiple projects, focusing on creating efficient and scalable web applications. My roles have involved both frontend and backend development, ensuring end-to-end solutions for various clients.",
   items: [
     {
       company: "Margmaker Solution Pvt. Ltd.",
       position: "Full Stack Developer",
-      duration: "Mar-2024 - present",
+      duration: "Mar 2024 - Present",
     },
     {
       company: "Eduuis Techo Solution Pvt. Ltd.",
       position: "Full Stack Developer",
-      duration: "Mar-2023 - Feb-2024",
+      duration: "Mar 2023 - Feb 2024",
     },
   ],
 };
 
+
 const education = {
   icon: "/assets/resume/cap.svg",
-  title: "My education",
+  title: "My Education",
   description:
-    "Lorem ipsum dolor elit. Ducimus ex vel accusantium placeat totam similique voluptatibus!",
+    "I have a strong educational background in both full stack web development and mathematics, which has equipped me with a comprehensive understanding of problem-solving and analytical skills. My formal education, combined with hands-on experience, has prepared me to tackle complex challenges in the tech industry.",
   items: [
     {
       Institution: "Masai School",
       degree: "Full Stack Web Development Bootcamp",
-      duration: "Mar-2022 - Dec-2022",
+      duration: "Mar 2022 - Dec 2022",
     },
     {
       Institution: "Magadh University",
       degree: "Bachelor of Science in Mathematics",
-      duration: "jun-2016 - Aug-2019",
+      duration: "Jun 2016 - Aug 2019",
     },
   ],
 };
 
+
 const skills = {
   title: "My Skills",
   description:
-    "Lorem ipsum dolor elit. Ducimus ex vel accusantium placeat totam similique voluptatibus!",
+    "I possess a diverse skill set in web development, proficient in both frontend and backend technologies. My expertise includes creating dynamic user interfaces, building robust backend systems, and managing databases efficiently.",
   skillset: [
     {
       icon: <FaHtml5 />,
@@ -94,20 +98,68 @@ const skills = {
       name: "JavaScript",
     },
     {
-      icon: <SiNextdotjs />,
-      name: "Next.js",
-    },
-    {
-      icon: <SiTailwindcss />,
-      name: "Tailwind css",
+      icon: <SiTypescript />,
+      name: "TypeScript",
     },
     {
       icon: <FaReact />,
       name: "React.js",
     },
     {
+      icon: <SiNextdotjs />,
+      name: "Next.js",
+    },
+    {
+      icon: <SiRedux />,
+      name: "Redux",
+    },
+    {
+      icon: <SiTailwindcss />,
+      name: "Tailwind CSS",
+    },
+    {
       icon: <FaNode />,
       name: "Node.js",
+    },
+    {
+      icon: <FaGit />,
+      name: "Git",
+    },
+    {
+      icon: <SiPostman />,
+      name: "Postman",
+    },
+    {
+      icon: <SiNpm />,
+      name: "NPM",
+    },
+    {
+      icon: <SiBootstrap />,
+      name: "Bootstrap 4",
+    },
+    {
+      icon: <SiMongodb />,
+      name: "MongoDB",
+    },
+    {
+      icon: <SiMysql />,
+      name: "MySQL",
+    },
+    {
+      icon: <SiFirebase />,
+      name: "Firebase",
+    },
+    {
+      icon: <FaDocker />,
+      name: "Docker",
+    },
+    {
+      icon: <SiSocketdotio />,
+      name: "Socket.io",
+    },
+    {
+      icon: <SiStripe />,
+      name: "Stripe Payment Integration",
     },
   ],
 };
@@ -206,13 +258,11 @@ function Resume() {
             </TabsContent>
 
             <TabsContent value="skills" className="w-full h-full">
-              <div className="flex flex-col gap-[30px]">
-                <div className="flex flex-col ga-[30px] text-center xl:text-left ">
-                  <h3 className="text-4xl font-bold">{skills.title}</h3>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 ">
-                    {skills.description}
-                  </p>
-                </div>
+              <div className="flex flex-col gap-[30px] text-center md:text-left ">
+                <h3 className="text-4xl font-bold">{skills.title}</h3>
+                <p className="max-w-[600px] text-white/60 md:m-0 ">
+                  {skills.description}
+                </p>
                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                   {skills.skillset.map((skill, index) => {
                     return (
@@ -240,13 +290,18 @@ function Resume() {
               value="about"
               className="w-full text-center xl:text-left "
             >
-              <div className="flex flex-col gap-[30px]">
+              <div className="flex flex-col gap-[30px] text-center md:text-left ">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 ">{about.description}</p>
+                 <p className="max-w-[600px] text-white/60 md:m-0 ">
+                  {about.description}
+                </p>
                 <ul>
                   {about.info.map((item, index) => {
                     return (
-                      <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
+                      <li
+                        key={index}
+                        className="flex items-center justify-center xl:justify-start gap-4"
+                      >
                         <span className="text-white/60">{item.fieldName}</span>
                         <span className="text-xl">{item.fieldValue}</span>
                       </li>

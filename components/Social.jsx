@@ -12,9 +12,15 @@ function Social({ containerStyles, iconStyles }) {
   return (
     <div className={containerStyles}>
       {socials.map((item, index) => (
-        <Link key={index} href={item.path} className={iconStyles}>
+        <a
+          key={index}
+          href={item.path}
+          className={`${iconStyles} hover:bg-green-500 hover:text-white`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {item.icon}
-        </Link>
+        </a>
       ))}
     </div>
   );
