@@ -41,7 +41,7 @@ const about = {
 
 
 const experience = {
-  icon: "/assets/resume/badge.svg",
+  icon: "./assets/resume/badge.svg",
   title: "My Experience",
   description:
     "With a solid background in Full Stack Development, I have successfully delivered multiple projects, focusing on creating efficient and scalable web applications. My roles have involved both frontend and backend development, ensuring end-to-end solutions for various clients.",
@@ -61,7 +61,7 @@ const experience = {
 
 
 const education = {
-  icon: "/assets/resume/cap.svg",
+  icon: "./assets/resume/cap.svg",
   title: "My Education",
   description:
     "I have a strong educational background in both full stack web development and mathematics, which has equipped me with a comprehensive understanding of problem-solving and analytical skills. My formal education, combined with hands-on experience, has prepared me to tackle complex challenges in the tech industry.",
