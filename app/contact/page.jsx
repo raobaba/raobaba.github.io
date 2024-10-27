@@ -45,6 +45,7 @@ function Contact() {
     service: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -56,6 +57,7 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
 
     const templateParams = {
       firstname: formData.firstname,
@@ -74,7 +76,6 @@ function Contact() {
         "Sr1XPkE1GmqWp2dJN"
       )
       .then((response) => {
-        console.log("Success:", response);
         toast.success("Message sent successfully!");
         setFormData({
           firstname: "",
@@ -86,14 +87,16 @@ function Contact() {
         });
       })
       .catch((error) => {
-        console.error("Error:", error);
         toast.error("Failed to send message.");
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
       <motion.section
         initial={{ opacity: 0 }}
         animate={{
@@ -106,7 +109,7 @@ function Contact() {
           <div className="flex flex-col md:flex-row gap-[30px]">
             <div className="xl:w-[54%] order-2 md:order-none">
               <form
-                className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl "
+                className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
                 onSubmit={handleSubmit}
               >
                 <h3 className="text-4xl text-accent">Let's Work Together</h3>
@@ -174,26 +177,25 @@ function Contact() {
                   size="md"
                   className="max-w-40 text-sm py-4"
                   type="submit"
+                  disabled={loading}
                 >
-                  Send me a message
+                  {loading ? "Sending..." : "Send me a message"}
                 </Button>
               </form>
             </div>
             <div className="flex-1 flex items-center md:justify-end order-1 md:order-none mb-8 md:mb-0">
               <ul className="flex flex-col gap-10">
-                {info.map((item, index) => {
-                  return (
-                    <li key={index} className="flex item-center gap-6">
-                      <div className="w-[52px] h-[52px] md:w-[72px] md:h-[72px] bg-[#27272c] text-accent rounded-md flex justify-center items-center">
-                        <div className="text-[28px]">{item.icon}</div>
-                      </div>
-                      <div className="flex-1">
-                        <p className="text-white/60">{item.title}</p>
-                        <h3 className="text-xl">{item.description}</h3>
-                      </div>
-                    </li>
-                  );
-                })}
+                {info.map((item, index) => (
+                  <li key={index} className="flex item-center gap-6">
+                    <div className="w-[52px] h-[52px] md:w-[72px] md:h-[72px] bg-[#27272c] text-accent rounded-md flex justify-center items-center">
+                      <div className="text-[28px]">{item.icon}</div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-white/60">{item.title}</p>
+                      <h3 className="text-xl">{item.description}</h3>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

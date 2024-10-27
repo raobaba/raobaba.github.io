@@ -20,7 +20,32 @@ const projects = [
   {
     num: "01",
     category: "FullStack",
-    title: "Project 1",
+    title: "NextHire",
+    description:
+      "NextHire is a job portal that enables users to post jobs, apply for positions, and receive email notifications regarding application status and many more...",
+    stack: [
+      { name: "HTML 5" },
+      { name: "CSS 3" },
+      { name: "JavaScript" },
+      { name: "React" },
+      { name: "Nodemailer" },
+      { name: "Redux" },
+      { name: "Node.js" },
+      { name: "MongoDB" },
+      { name: "ReactJS" },
+      { name: "ExpressJS" },
+      { name: "Redux-Thunk" },
+      { name: "Tailwind CSS" },
+      { name: "GEN AI" },
+    ],
+    image: "/./assets/work/nexthire.png",
+    live: "https://nexthire-portal.netlify.app/",
+    github: "https://github.com/raobaba/Next_Hire_Job_Portal",
+  },
+  {
+    num: "02",
+    category: "FullStack",
+    title: "Flipkart",
     description:
       "Flipkart has a dominant position in the apparel segment, bolstered by its acquisition of Myntra, and was described as being 'neck and neck' with Amazon in the sale of electronics and mobile phones",
     stack: [
@@ -37,14 +62,14 @@ const projects = [
       { name: "Redux-Thunk" },
       { name: "Tailwind CSS" },
     ],
-    image: "./assets/work/flipkart.png",
+    image: "/./assets/work/flipkart.png",
     live: "https://flip-ecom-website.netlify.app/",
     github: "https://github.com/raobaba/Flipkart_Clone",
   },
   {
-    num: "02",
+    num: "03",
     category: "FullStack",
-    title: "Project 1",
+    title: "SkinStore",
     description:
       "SkinStore is an authorized retailer to 100s of premium beauty brands across skin, makeup and hair including SkinCeuticals, Dermalogica, Caudalie, Alternative and many othr product related skin. It's a US based company...",
     stack: [
@@ -53,14 +78,14 @@ const projects = [
       { name: "JavaScript" },
       { name: "Bootstrap" },
     ],
-    image: "./assets/work/SkinStore.png",
+    image: "/./assets/work/SkinStore.png",
     live: "https://skinstore-website.netlify.app/",
     github: "https://github.com/raobaba/Clone-SkinStore",
   },
   {
-    num: "03",
+    num: "04",
     category: "Frontend",
-    title: "Project 1",
+    title: "Myntra",
     description:
       "Myntra is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, and this is our 2 collaborative project in masai school",
     stack: [
@@ -69,9 +94,43 @@ const projects = [
       { name: "JavaScript" },
       { name: "Bootstrap" },
     ],
-    image: "./assets/work/Myntra.png",
+    image: "/./assets/work/Myntra.png",
     live: "https://darling-tartufo-bbf819.netlify.app/",
     github: "https://github.com/raobaba/Myntra-Clone",
+  },
+  {
+    num: "05",
+    category: "FullStack",
+    title: "YOOM",
+    description:
+      "Developed a Zoom-like application allowing users to initiate video calls, view and schedule meetings, access past recordings, and invite others via links for seamless collaboration.",
+    stack: [
+      { name: "Nextjs14" },
+      { name: "Stream" },
+      { name: "Clerk Auth" },
+      { name: "Typescript" },
+      { name: "Tailwind css" },
+    ],
+    image: "/./assets/work/YOOM.png",
+    live: "https://video-call-flame-six.vercel.app/",
+    github: "https://github.com/raobaba/video-conference",
+  },
+  {
+    num: "06",
+    category: "Frontend",
+    title: "Dashboard",
+    description:
+      "About This dashboard application features diverse ecommerce charts (pie, bar, line, financial, pyramid) with color mapping, alongside tools like a color picker, Kanban board, editor, calendar, and displays comprehensive data for orders, employees, and customers.",
+    stack: [
+      { name: "Nextjs14" },
+      { name: "Stream" },
+      { name: "Clerk Auth" },
+      { name: "Typescript" },
+      { name: "Tailwind css" },
+    ],
+    image: "/./assets/work/dashboard.png",
+    live: "https://dashboard-coral-tau.vercel.app/",
+    github: "https://github.com/raobaba/dashboard",
   },
 ];
 
@@ -100,8 +159,11 @@ function Work() {
                 {project.num}
               </div>
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all capitalize duration-500 ">
-                {project.category} Project
+                {project.title} 
               </h2>
+              <h4 className="text-[30px] font-bold leading-none text-white group-hover:text-accent transition-all capitalize duration-500 ">
+                {project.category} Project
+              </h4>
               <p className="text-white/60">{project.description}</p>
               <ul className="flex flex-wrap gap-4 h-auto">
                 {project.stack.map((item, index) => (
@@ -116,7 +178,11 @@ function Work() {
               </ul>
               <div className="border border-white/20 w-11/12"></div>
               <div className="flex items-center gap-4 ">
-                <Link href={project.live}>
+                <Link
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[50px] h-[50px] rounded-full bg-white/5 flex justify-center items-center group ">
@@ -130,7 +196,11 @@ function Work() {
                     </Tooltip>
                   </TooltipProvider>
                 </Link>
-                <Link href={project.github}>
+                <Link
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[50px] h-[50px] rounded-full bg-white/5 flex justify-center items-center group ">
@@ -151,7 +221,7 @@ function Work() {
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
-              className="md:h-[520px] mb-12"
+              className="md:h-[470px] mb-12"
               onSlideChange={handleSlideChange}
             >
               {projects.map((project, index) => (

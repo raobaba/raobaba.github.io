@@ -44,7 +44,7 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="order-1 md:order-none mb-8 md:mb-10 ">
+          <div className="order-1 md:order-none mb-5 md:mb-10 ">
             <Photo />
           </div>
         </div>

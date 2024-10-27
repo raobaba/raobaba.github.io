@@ -5,7 +5,7 @@ import Nav from "./Nav";
 import MobileNav from "./MobileNav";
 function Header() {
   return (
-    <header className="py-8 xl:py-12 text-white">
+    <header className="py-8 xl:py-10 text-white">
       <div className="container mx-auto flex justify-between items-center">
         {}
         <Link href={"/"}>
