@@ -22,7 +22,7 @@ function Home() {
             </p>
             <div className="flex flex-col md:flex-row items-center gap-8">
               <a
-                href="https://drive.google.com/file/d/1TpkrL3RK9iZkSjtvoooUowz8GifAKusi/view?usp=sharing"
+                href="https://drive.google.com/file/d/1BTKLp3CJppeCg9rcnZ7ubeKW6izSAfGJ/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 download
