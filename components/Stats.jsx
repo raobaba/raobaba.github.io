@@ -7,42 +7,55 @@ function Stats() {
   const [commits, setCommits] = useState(0);
 
   useEffect(() => {
-    const fetchProjectsAndCommits = async () => {
-      try {
-        const response = await fetch(
-          "https://api.github.com/users/raobaba/repos"
-        );
-        const repos = await response.json();
+    const storedData = localStorage.getItem("githubStats");
 
-        setProjects(repos.length); // Update project count
-
-        let totalCommits = 0;
-        const commitPromises = repos.map(async (repo) => {
-          const commitResponse = await fetch(
-            `https://api.github.com/repos/raobaba/${repo.name}/commits?per_page=1`
+    if (storedData) {
+      const { projects, commits } = JSON.parse(storedData);
+      setProjects(projects);
+      setCommits(commits);
+    } else {
+      const fetchProjectsAndCommits = async () => {
+        try {
+          const response = await fetch(
+            "https://api.github.com/users/raobaba/repos"
           );
-          const commitData = await commitResponse.json();
+          const repos = await response.json();
 
-          if (commitResponse.headers.get("link")) {
-            const lastPageMatch = commitResponse.headers
-              .get("link")
-              .match(/&page=(\d+)>; rel="last"/);
-            if (lastPageMatch) {
-              totalCommits += parseInt(lastPageMatch[1], 10);
+          const projectCount = repos.length;
+
+          let totalCommits = 0;
+          const commitPromises = repos.map(async (repo) => {
+            const commitResponse = await fetch(
+              `https://api.github.com/repos/raobaba/${repo.name}/commits?per_page=1`
+            );
+            const commitData = await commitResponse.json();
+
+            if (commitResponse.headers.get("link")) {
+              const lastPageMatch = commitResponse.headers
+                .get("link")
+                .match(/&page=(\d+)>; rel="last"/);
+              if (lastPageMatch) {
+                totalCommits += parseInt(lastPageMatch[1], 10);
+              }
+            } else {
+              totalCommits += commitData.length;
             }
-          } else {
-            totalCommits += commitData.length;
-          }
-        });
+          });
 
-        await Promise.all(commitPromises);
-        setCommits(totalCommits); // Update commit count
-      } catch (error) {
-        console.error("Error fetching GitHub data:", error);
-      }
-    };
+          await Promise.all(commitPromises);
 
-    fetchProjectsAndCommits();
+          const githubStats = { projects: projectCount, commits: totalCommits };
+          localStorage.setItem("githubStats", JSON.stringify(githubStats));
+
+          setProjects(projectCount);
+          setCommits(totalCommits);
+        } catch (error) {
+          console.error("Error fetching GitHub data:", error);
+        }
+      };
+
+      fetchProjectsAndCommits();
+    }
   }, []);
 
   const stats = [
@@ -65,19 +78,19 @@ function Stats() {
   ];
 
   return (
-    <section className='pt-4 pb-12 md:pt-0 md:pb-0'>
-      <div className='container mx-auto'>
-        <div className='flex flex-wrap gap-6 max-w-[80vh] mx-auto md:max-w-none'>
+    <section className="pt-4 pb-12 md:pt-0 md:pb-0">
+      <div className="container mx-auto">
+        <div className="flex flex-wrap gap-6 max-w-[80vh] mx-auto md:max-w-none">
           {stats.map((item, index) => (
             <div
               key={index}
-              className='flex-1 flex items-center justify-center xl:justify-start'
+              className="flex-1 flex items-center justify-center xl:justify-start"
             >
               <CountUp
                 end={item.num}
                 duration={5}
                 delay={2}
-                className='text-4xl md:text-6xl font-extrabold'
+                className="text-4xl md:text-6xl font-extrabold"
               />
               <p
                 className={`${
